@@ -1,0 +1,16 @@
+server:
+  port: 8082
+spring:
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 2
+    clean-on-validation-error: false
+    sql-migration-prefix: V
+    sql-migration-suffixes: .sql
+    locations: classpath:db/migration
+  datasource:
+    url: jdbc:mysql://${MMS_DB_URI}
+    username: ${MMS_DB_USERNAME}
+    password: ${MMS_DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
